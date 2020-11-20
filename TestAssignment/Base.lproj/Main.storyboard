@@ -130,13 +130,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3y7-cs-M9H">
-                                                    <rect key="frame" x="16" y="22" width="0.0" height="0.0"/>
+                                                    <rect key="frame" x="16" y="22" width="298" height="0.0"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" name="reversed"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pjn-hd-Lt3">
-                                                    <rect key="frame" x="359" y="22" width="0.0" height="0.0"/>
+                                                    <rect key="frame" x="319" y="22" width="40" height="0.0"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="40" id="gjq-LI-MVO"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" name="reversed"/>
                                                     <nil key="highlightedColor"/>
@@ -148,6 +151,7 @@
                                                 <constraint firstItem="Pjn-hd-Lt3" firstAttribute="centerY" secondItem="7Zl-gO-bDu" secondAttribute="centerY" id="TaH-sk-up6"/>
                                                 <constraint firstItem="Pjn-hd-Lt3" firstAttribute="trailing" secondItem="7Zl-gO-bDu" secondAttribute="trailingMargin" id="fRX-sT-iBm"/>
                                                 <constraint firstItem="3y7-cs-M9H" firstAttribute="centerY" secondItem="7Zl-gO-bDu" secondAttribute="centerY" id="jV2-0S-wbf"/>
+                                                <constraint firstItem="Pjn-hd-Lt3" firstAttribute="leading" secondItem="3y7-cs-M9H" secondAttribute="trailing" constant="5" id="yKp-5S-3cx"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" name="main"/>
@@ -204,13 +208,13 @@
     <resources>
         <image name="placeholder" width="960" height="960"/>
         <namedColor name="main">
-            <color red="0.98785477880000006" green="0.66259455680000001" blue="0.50764465329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="reversed">
-            <color red="0.36201184990000002" green="0.0557558462" blue="0.18503120540000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.14900000393390656" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="reversed pale">
-            <color red="0.36201184990000002" green="0.0557558462" blue="0.18503120540000001" alpha="0.70348568322523586" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.14900000393390656" blue="0.0" alpha="0.69999998807907104" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
