@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AF6DA0A32567C54400B29524 /* DetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6DA0A22567C54400B29524 /* DetailedViewController.swift */; };
 		AF6DA0A62567C64300B29524 /* SongCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6DA0A52567C64300B29524 /* SongCell.swift */; };
+		AFB2CD0B25686CAE0055CF90 /* DiamondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB2CD0A25686CAE0055CF90 /* DiamondView.swift */; };
 		AFCD266925666FF300FEF1EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCD266825666FF300FEF1EA /* AppDelegate.swift */; };
 		AFCD266B25666FF300FEF1EA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCD266A25666FF300FEF1EA /* SceneDelegate.swift */; };
 		AFCD266D25666FF300FEF1EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCD266C25666FF300FEF1EA /* ViewController.swift */; };
@@ -28,6 +29,7 @@
 		9595175A4DB0EF2B22624E89 /* Pods_TestAssignment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestAssignment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF6DA0A22567C54400B29524 /* DetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedViewController.swift; sourceTree = "<group>"; };
 		AF6DA0A52567C64300B29524 /* SongCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongCell.swift; sourceTree = "<group>"; };
+		AFB2CD0A25686CAE0055CF90 /* DiamondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiamondView.swift; sourceTree = "<group>"; };
 		AFCD266525666FF300FEF1EA /* TestAssignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFCD266825666FF300FEF1EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFCD266A25666FF300FEF1EA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				AFCD267E2566766500FEF1EA /* APIHandler.swift */,
 				AFCD26852566A12900FEF1EA /* Extensions.swift */,
 				AFCD268125667ED900FEF1EA /* Model.swift */,
+				AFB2CD0A25686CAE0055CF90 /* DiamondView.swift */,
 				AFCD267125666FF400FEF1EA /* Assets.xcassets */,
 				AFCD267325666FF400FEF1EA /* LaunchScreen.storyboard */,
 				AFCD267625666FF400FEF1EA /* Info.plist */,
@@ -225,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFCD268225667ED900FEF1EA /* Model.swift in Sources */,
+				AFB2CD0B25686CAE0055CF90 /* DiamondView.swift in Sources */,
 				AFCD26862566A12900FEF1EA /* Extensions.swift in Sources */,
 				AF6DA0A32567C54400B29524 /* DetailedViewController.swift in Sources */,
 				AFCD266D25666FF300FEF1EA /* ViewController.swift in Sources */,

@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -79,12 +80,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="ILB-i5-ndb">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ytl-MW-f6o" customClass="DiamondView" customModule="TestAssignment" customModuleProvider="target">
                                 <rect key="frame" x="50" y="40" width="275" height="275"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="ILB-i5-ndb">
+                                        <rect key="frame" x="-15" y="-15" width="305" height="305"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cRadiusMod">
+                                                <real key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="dLengthMod">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="ILB-i5-ndb" secondAttribute="height" multiplier="1:1" id="yBI-Id-lgO"/>
+                                    <constraint firstItem="ILB-i5-ndb" firstAttribute="leading" secondItem="Ytl-MW-f6o" secondAttribute="leading" constant="-15" id="7I4-48-wKO"/>
+                                    <constraint firstAttribute="bottom" secondItem="ILB-i5-ndb" secondAttribute="bottom" constant="-15" id="Hcc-1X-red"/>
+                                    <constraint firstAttribute="width" secondItem="Ytl-MW-f6o" secondAttribute="height" id="NXB-ut-smk"/>
+                                    <constraint firstAttribute="trailing" secondItem="ILB-i5-ndb" secondAttribute="trailing" constant="-15" id="eK3-jr-Z9v"/>
+                                    <constraint firstItem="ILB-i5-ndb" firstAttribute="top" secondItem="Ytl-MW-f6o" secondAttribute="top" constant="-15" id="uYk-6c-Dn6"/>
                                 </constraints>
-                            </imageView>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cRadiusMod">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="dLengthMod">
+                                        <real key="value" value="9"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xwd-Wc-gCu">
                                 <rect key="frame" x="0.0" y="322" width="375" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -168,24 +195,24 @@
                         <color key="backgroundColor" name="main"/>
                         <constraints>
                             <constraint firstItem="xwd-Wc-gCu" firstAttribute="centerX" secondItem="X5b-sm-oCm" secondAttribute="centerX" id="6y7-vN-Ec8"/>
+                            <constraint firstItem="FWE-CQ-RWJ" firstAttribute="trailing" secondItem="Ytl-MW-f6o" secondAttribute="trailing" constant="50" id="6ys-yu-31y"/>
                             <constraint firstItem="XGz-aj-fYt" firstAttribute="bottom" secondItem="oyK-rN-3DH" secondAttribute="top" constant="-5" id="9K1-Jh-CLQ"/>
                             <constraint firstItem="FWE-CQ-RWJ" firstAttribute="trailing" secondItem="xwd-Wc-gCu" secondAttribute="trailing" id="ASA-Kd-QzC"/>
-                            <constraint firstItem="ILB-i5-ndb" firstAttribute="top" secondItem="FWE-CQ-RWJ" secondAttribute="top" constant="40" id="B5f-3F-Vg9"/>
                             <constraint firstItem="Sbo-zh-j5j" firstAttribute="top" secondItem="xwd-Wc-gCu" secondAttribute="bottom" constant="7" id="BCT-cR-hpN"/>
                             <constraint firstItem="xwd-Wc-gCu" firstAttribute="leading" secondItem="FWE-CQ-RWJ" secondAttribute="leading" id="DzB-iB-tFQ"/>
+                            <constraint firstItem="xwd-Wc-gCu" firstAttribute="top" secondItem="Ytl-MW-f6o" secondAttribute="bottom" constant="7" id="EVJ-AW-lix"/>
                             <constraint firstItem="cXW-dp-hJG" firstAttribute="leading" secondItem="FWE-CQ-RWJ" secondAttribute="leading" id="HbV-S3-kmD"/>
                             <constraint firstItem="cXW-dp-hJG" firstAttribute="top" secondItem="Sbo-zh-j5j" secondAttribute="bottom" constant="10" id="KFy-h5-Byx"/>
                             <constraint firstItem="mfb-IW-hfA" firstAttribute="leading" secondItem="FWE-CQ-RWJ" secondAttribute="leading" constant="16" id="LKF-Lh-7MP"/>
                             <constraint firstItem="Sbo-zh-j5j" firstAttribute="leading" secondItem="FWE-CQ-RWJ" secondAttribute="leading" id="LQu-JX-SUn"/>
                             <constraint firstItem="XGz-aj-fYt" firstAttribute="leading" secondItem="FWE-CQ-RWJ" secondAttribute="leading" constant="16" id="S1r-FU-rrN"/>
-                            <constraint firstItem="ILB-i5-ndb" firstAttribute="leading" secondItem="FWE-CQ-RWJ" secondAttribute="leading" constant="50" id="XsW-ib-laQ"/>
                             <constraint firstItem="oyK-rN-3DH" firstAttribute="leading" secondItem="FWE-CQ-RWJ" secondAttribute="leading" constant="16" id="auq-z1-RKx"/>
-                            <constraint firstItem="xwd-Wc-gCu" firstAttribute="top" secondItem="ILB-i5-ndb" secondAttribute="bottom" constant="7" id="d2r-Rb-6mm"/>
                             <constraint firstItem="XGz-aj-fYt" firstAttribute="top" secondItem="mfb-IW-hfA" secondAttribute="bottom" constant="5" id="ele-Hl-7xY"/>
                             <constraint firstItem="FWE-CQ-RWJ" firstAttribute="trailing" secondItem="cXW-dp-hJG" secondAttribute="trailing" id="i9y-z1-3tR"/>
-                            <constraint firstItem="FWE-CQ-RWJ" firstAttribute="trailing" secondItem="ILB-i5-ndb" secondAttribute="trailing" constant="50" id="ir4-VN-Von"/>
+                            <constraint firstItem="Ytl-MW-f6o" firstAttribute="leading" secondItem="FWE-CQ-RWJ" secondAttribute="leading" constant="50" id="kYl-h2-exz"/>
                             <constraint firstItem="cXW-dp-hJG" firstAttribute="bottom" secondItem="mfb-IW-hfA" secondAttribute="top" constant="-5" id="lc4-kL-Jqr"/>
                             <constraint firstAttribute="trailing" secondItem="oyK-rN-3DH" secondAttribute="trailing" constant="16" id="oqz-Fa-SYX"/>
+                            <constraint firstItem="Ytl-MW-f6o" firstAttribute="top" secondItem="FWE-CQ-RWJ" secondAttribute="top" constant="40" id="rae-ct-gdH"/>
                             <constraint firstItem="FWE-CQ-RWJ" firstAttribute="bottom" secondItem="oyK-rN-3DH" secondAttribute="bottom" constant="10" id="ub5-oc-MUV"/>
                             <constraint firstItem="FWE-CQ-RWJ" firstAttribute="trailing" secondItem="Sbo-zh-j5j" secondAttribute="trailing" id="xLf-2m-RSq"/>
                         </constraints>
@@ -198,6 +225,7 @@
                         <outlet property="releaseDate" destination="XGz-aj-fYt" id="hCZ-k7-7yq"/>
                         <outlet property="songsCount" destination="mfb-IW-hfA" id="s8q-pn-85j"/>
                         <outlet property="songsTable" destination="cXW-dp-hJG" id="50D-7y-RPh"/>
+                        <outlet property="wrapperView" destination="Ytl-MW-f6o" id="KC5-8C-cMK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d7D-pk-drt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -216,5 +244,8 @@
         <namedColor name="reversed pale">
             <color red="1" green="0.14900000393390656" blue="0.0" alpha="0.69999998807907104" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

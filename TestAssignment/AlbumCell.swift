@@ -10,6 +10,7 @@ import Kingfisher
 
 class AlbumCell: UICollectionViewCell {
 
+    @IBOutlet weak var wrapperView: DiamondView!
     @IBOutlet weak var artworkView: UIImageView!
     @IBOutlet weak var albumName: UILabel!
     @IBOutlet weak var artistName: UILabel!

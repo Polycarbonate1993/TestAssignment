@@ -4,32 +4,59 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AlbumCell" id="gTV-IL-0wX" customClass="AlbumCell" customModule="TestAssignment" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="95" height="165"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="redraw" reuseIdentifier="AlbumCell" id="gTV-IL-0wX" customClass="AlbumCell" customModule="TestAssignment" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="77" height="124"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="95" height="165"/>
+                <rect key="frame" x="0.0" y="0.0" width="77" height="124"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZTV-nt-6Ol">
-                        <rect key="frame" x="0.0" y="0.0" width="95" height="95"/>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mid-w7-xPg" customClass="DiamondView" customModule="TestAssignment" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="77" height="77"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="ZTV-nt-6Ol">
+                                <rect key="frame" x="-10" y="0.0" width="97" height="97"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cRadiusMod">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="dLengthMod">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="ZTV-nt-6Ol" secondAttribute="height" id="Bjg-OX-5sh"/>
+                            <constraint firstAttribute="bottom" secondItem="ZTV-nt-6Ol" secondAttribute="bottom" constant="-20" id="5us-hH-dfB"/>
+                            <constraint firstAttribute="width" secondItem="Mid-w7-xPg" secondAttribute="height" id="QfX-Ef-DP0"/>
+                            <constraint firstAttribute="trailing" secondItem="ZTV-nt-6Ol" secondAttribute="trailing" constant="-10" id="Wao-2L-nA9"/>
+                            <constraint firstItem="ZTV-nt-6Ol" firstAttribute="leading" secondItem="Mid-w7-xPg" secondAttribute="leading" constant="-10" id="dRv-nC-ihG"/>
+                            <constraint firstItem="ZTV-nt-6Ol" firstAttribute="top" secondItem="Mid-w7-xPg" secondAttribute="top" id="rfT-MX-kCr"/>
                         </constraints>
-                    </imageView>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cRadiusMod">
+                                <real key="value" value="4"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="dLengthMod">
+                                <real key="value" value="9"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZWh-X3-wKf">
-                        <rect key="frame" x="0.0" y="100" width="95" height="16"/>
+                        <rect key="frame" x="0.0" y="82" width="77" height="16"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" name="reversed"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E7o-ve-lfd">
-                        <rect key="frame" x="0.0" y="121" width="95" height="12"/>
+                        <rect key="frame" x="0.0" y="103" width="77" height="12"/>
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <color key="textColor" name="reversed pale"/>
                         <nil key="highlightedColor"/>
@@ -39,33 +66,36 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="ZWh-X3-wKf" secondAttribute="trailing" id="258-SS-dy9"/>
-                <constraint firstItem="ZWh-X3-wKf" firstAttribute="centerX" secondItem="ZTV-nt-6Ol" secondAttribute="centerX" id="8Xl-WJ-Et7"/>
-                <constraint firstItem="ZTV-nt-6Ol" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="MHc-B0-hUU"/>
+                <constraint firstItem="Mid-w7-xPg" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="3Za-g8-O9p"/>
+                <constraint firstItem="Mid-w7-xPg" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="9FS-OO-foK"/>
                 <constraint firstItem="E7o-ve-lfd" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="RBM-I9-0i4"/>
                 <constraint firstItem="E7o-ve-lfd" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Scg-Bk-ZZ7"/>
-                <constraint firstItem="ZWh-X3-wKf" firstAttribute="top" secondItem="ZTV-nt-6Ol" secondAttribute="bottom" constant="5" id="V93-6l-eMy"/>
-                <constraint firstItem="ZTV-nt-6Ol" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="VDS-OW-GXm"/>
-                <constraint firstItem="ZTV-nt-6Ol" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="YS5-Hw-vvM"/>
+                <constraint firstItem="ZWh-X3-wKf" firstAttribute="top" secondItem="Mid-w7-xPg" secondAttribute="bottom" constant="5" id="Vkf-N6-dtT"/>
+                <constraint firstAttribute="trailing" secondItem="Mid-w7-xPg" secondAttribute="trailing" id="b0H-k0-0yQ"/>
                 <constraint firstItem="E7o-ve-lfd" firstAttribute="top" secondItem="ZWh-X3-wKf" secondAttribute="bottom" constant="5" id="eKZ-f7-QVI"/>
-                <constraint firstAttribute="trailing" secondItem="ZTV-nt-6Ol" secondAttribute="trailing" id="ifp-nm-gis"/>
                 <constraint firstItem="ZWh-X3-wKf" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="jCh-0a-1AK"/>
                 <constraint firstAttribute="trailing" secondItem="E7o-ve-lfd" secondAttribute="trailing" id="rz9-F0-GJP"/>
             </constraints>
-            <size key="customSize" width="95" height="165"/>
+            <size key="customSize" width="77" height="124"/>
             <connections>
                 <outlet property="albumName" destination="ZWh-X3-wKf" id="RrN-AQ-HuY"/>
                 <outlet property="artistName" destination="E7o-ve-lfd" id="n0e-S8-3gj"/>
                 <outlet property="artworkView" destination="ZTV-nt-6Ol" id="92f-lD-GNo"/>
+                <outlet property="wrapperView" destination="Mid-w7-xPg" id="hBa-H7-hxe"/>
             </connections>
-            <point key="canvasLocation" x="163.04347826086959" y="128.90625"/>
+            <point key="canvasLocation" x="148.55072463768118" y="111.83035714285714"/>
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="placeholder" width="960" height="960"/>
         <namedColor name="reversed">
-            <color red="0.36201184990000002" green="0.0557558462" blue="0.18503120540000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.14900000393390656" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="reversed pale">
-            <color red="0.36201184990000002" green="0.0557558462" blue="0.18503120540000001" alpha="0.70348568322523586" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.14900000393390656" blue="0.0" alpha="0.69999998807907104" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

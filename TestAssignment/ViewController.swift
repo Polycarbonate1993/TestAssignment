@@ -15,8 +15,12 @@ class ViewController: UIViewController {
     private var searchTask: DispatchWorkItem?
     private lazy var dataSource: UICollectionViewDiffableDataSource<Int, Result> = {
         let dataSource = UICollectionViewDiffableDataSource<Int, Result>(collectionView: albumCollection) { (collectionView, indexPath, result) -> UICollectionViewCell? in
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AlbumCell", for: indexPath) as? AlbumCell
-            cell?.album = result
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AlbumCell", for: indexPath) as? AlbumCell else {
+                return UICollectionViewCell()
+            }
+            cell.album = result
+            //Instantiating the initial layout for the cell
+            self.cellImageOffsetCalculation(with: collectionView, albumCell: cell)
             return cell
         }
         return dataSource
@@ -81,10 +85,22 @@ class ViewController: UIViewController {
     // MARK: - UICollectionViewDelegate, UICollectionViewDelegateFlowLayout
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as? AlbumCell
+        cell?.wrapperView.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
+    }
+    func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as? AlbumCell
+        cell?.wrapperView.springAnimation(fromStart: true, startingScale: (x: 0.95, y: 0.95))
+    }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let newVC = storyboard?.instantiateViewController(identifier: "DetailedViewController") as? DetailedViewController
-        newVC?.album = dataSource.itemIdentifier(for: indexPath)
-        navigationController?.pushViewController(newVC ?? UIViewController(), animated: true)
+        let cell = collectionView.cellForItem(at: indexPath) as? AlbumCell
+        cell?.wrapperView.springAnimation(fromStart: true, startingScale: (x: 0.95, y: 0.95), completion: {
+            let newVC = self.storyboard?.instantiateViewController(identifier: "DetailedViewController") as? DetailedViewController
+            newVC?.album = self.dataSource.itemIdentifier(for: indexPath)
+            self.navigationController?.pushViewController(newVC ?? UIViewController(), animated: true)
+        })
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         guard let layout = collectionViewLayout as? UICollectionViewFlowLayout else {
@@ -93,6 +109,27 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDelegateFlow
         //Calculating cell size, 38 is the sum of all vertical constraints and heights of two UILabels in Album cell
         let width = (collectionView.frame.width - layout.sectionInset.left - layout.sectionInset.right - layout.minimumInteritemSpacing * CGFloat(numberOfCells - 1)) / CGFloat(numberOfCells)
         return CGSize(width: width, height: width + 38)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard let cells = self.albumCollection.visibleCells as? [AlbumCell] else {
+            return
+        }
+            for cell in cells {
+                cellImageOffsetCalculation(with: scrollView, albumCell: cell)
+            }
+    }
+    
+    /// This function corrects the position of ithe image view inside its container view with scrollView position.
+    /// - Parameters:
+    ///   - scrollView: UIScrollView or its decessor that contains the cell
+    ///   - albumCell: The cell that contains UIImageView for parallax effect
+    private func cellImageOffsetCalculation(with scrollView: UIScrollView, albumCell: AlbumCell) {
+        let offsetY = scrollView.contentOffset.y
+        let cellYOffset = offsetY - albumCell.frame.origin.y
+        let offsetInPercents = cellYOffset / scrollView.frame.height
+        let shift = albumCell.artworkView.frame.height - albumCell.wrapperView.frame.height
+        albumCell.artworkView.transform = CGAffineTransform(translationX: 0, y: shift * offsetInPercents)
     }
 }
 

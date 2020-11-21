@@ -10,6 +10,7 @@ import Kingfisher
 
 class DetailedViewController: UIViewController, UITableViewDataSource {
     
+    @IBOutlet weak var wrapperView: DiamondView!
     @IBOutlet weak var artworkView: UIImageView!
     @IBOutlet weak var albumName: UILabel!
     @IBOutlet weak var artistName: UILabel!
@@ -26,6 +27,8 @@ class DetailedViewController: UIViewController, UITableViewDataSource {
         songsTable.dataSource = self
         APIHandler.shared.delegate = self
         fill()
+        //adding parallax effect
+        artworkView.addParallaxEffect(amount: Int(min(artworkView.bounds.width - wrapperView.bounds.width, artworkView.bounds.height - wrapperView.bounds.height)))
     }
     /**Configures all elements of the controller with given album.*/
     private func fill() {
